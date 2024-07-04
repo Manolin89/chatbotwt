@@ -1,2 +1,1 @@
-# CURSO_APIMETAPYTHON
-# CURSO_APIMETAPYTHON
+#Primer intento de chatbot whatsapp con python
