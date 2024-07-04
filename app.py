@@ -101,11 +101,11 @@ def recibir_mensajes(req):
                     numero = messages["from"]
 
                     enviar_mensajes_whatsapp(text,numero)
-                    print("hola")
+                    print("hola", flush=True)
 
                     #Guardar Log en la BD
                     agregar_mensajes_log(json.dumps(messages))
-                    print("xxxxxxxxx")
+                    print("xxxxxxxxx", flush=True)
 
         return jsonify({'message':'EVENT_RECEIVED'})
     except Exception as e:
@@ -114,7 +114,7 @@ def recibir_mensajes(req):
 def enviar_mensajes_whatsapp(texto,number):
     texto = texto.lower()
 
-    print("Hola")
+    print("Hola", flush=True)
     if "hola" in texto:
         data={
             "messaging_product": "whatsapp",
