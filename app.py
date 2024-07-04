@@ -112,6 +112,7 @@ def recibir_mensajes(req):
 def enviar_mensajes_whatsapp(texto,number):
     texto = texto.lower()
 
+    print("Hola")
     if "hola" in texto:
         data={
             "messaging_product": "whatsapp",
