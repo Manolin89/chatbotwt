@@ -369,6 +369,7 @@ def enviar_mensajes_whatsapp(texto,number):
 
     #Convertir el diccionaria a formato JSON
     data=json.dumps(data)
+    print(data, flush=True)
 
     headers = {
         "Content-Type" : "application/json",
