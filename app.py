@@ -44,7 +44,7 @@ def agregar_mensajes_log(texto):
     db.session.commit()
 
 #Token de verificacion para la configuracion
-TOKEN_ANDERCODE = "ANDERCODE"
+TOKEN_AUTH = "YAGANASTE"
 
 @app.route('/webhook', methods=['GET','POST'])
 def webhook():
@@ -59,7 +59,7 @@ def verificar_token(req):
     token = req.args.get('hub.verify_token')
     challenge = req.args.get('hub.challenge')
 
-    if challenge and token == TOKEN_ANDERCODE:
+    if challenge and token == TOKEN_AUTH:
         return challenge
     else:
         return jsonify({'error':'Token Invalido'}),401
@@ -129,7 +129,7 @@ def enviar_mensajes_whatsapp(texto,number):
             "type": "text",
             "text": {
                 "preview_url": False,
-                "body": "🚀 Hola, ¿Cómo estás? Bienvenido."
+                "body": "🚀 Hola, ¿Cómo estás? Bienvenido a YaGanaste."
             }
         }
     elif "1" in texto:
@@ -140,7 +140,7 @@ def enviar_mensajes_whatsapp(texto,number):
             "type": "text",
             "text": {
                 "preview_url": False,
-                "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                "body": "Plataforma de Pagos que Además Ayuda a tus Áreas de Marketing, Tesorería y Operaciones. Reduce costos, aumenta los ingresos y administra tu negocio de manera más eficiente con una plataforma totalmente integrada. Utiliza Ya para gestionar tus necesidades relacionadas con pagos, gestionar operaciones de personal, de ingresos y lanzar campañas para fidelizar a tus clientes."
             }
         }
     elif "2" in texto:
@@ -149,10 +149,10 @@ def enviar_mensajes_whatsapp(texto,number):
             "to": number,
             "type": "location",
             "location": {
-                "latitude": "-12.067158831865067",
-                "longitude": "-77.03377940839486",
-                "name": "Estadio Nacional del Perú",
-                "address": "Cercado de Lima"
+                "latitude": "19.4379776",
+                "longitude": "-99.2018432",
+                "name": "Lomas Plaza",
+                "address": "Piso 2+ y 5"
             }
         }
     elif "3" in texto:
@@ -162,8 +162,8 @@ def enviar_mensajes_whatsapp(texto,number):
             "to": number,
             "type": "document",
             "document": {
-                    "link": "https://www.turnerlibros.com/wp-content/uploads/2021/02/ejemplo.pdf",
-                    "caption": "Temario del Curso #001"
+                    "link": "https://www.pagatodo.com/pdfs/cuentas/Cuenta%20Ya%20Ganaste.pdf",
+                    "caption": "Nuestro servicio"
                 }
             }
     elif "4" in texto:
@@ -182,7 +182,7 @@ def enviar_mensajes_whatsapp(texto,number):
             "to": number,
             "text": {
                 "preview_url": True,
-                "body": "Introduccion al curso! https://youtu.be/6ULOE2tGlBM"
+                "body": "Conocenos! https://www.youtube.com/watch?v=rKQTNXrCBD0"
             }
         }
     elif "6" in texto:
@@ -369,7 +369,7 @@ def enviar_mensajes_whatsapp(texto,number):
             "type": "text",
             "text": {
                 "preview_url": False,
-                "body": "🚀 Hola, visita mi web anderson-bastidas.com para más información.\n \n📌Por favor, ingresa un número #️⃣ para recibir información.\n \n1️⃣. Información del Curso. ❔\n2️⃣. Ubicación del local. 📍\n3️⃣. Enviar temario en PDF. 📄\n4️⃣. Audio explicando curso. 🎧\n5️⃣. Video de Introducción. ⏯️\n6️⃣. Hablar con AnderCode. 🙋‍♂️\n7️⃣. Horario de Atención. 🕜 \n0️⃣. Regresar al Menú. 🕜"
+                "body": "🚀 Hola, visita mi web www.yaganaste.com para más información.\n \n📌Por favor, ingresa un número #️⃣ para recibir información.\n \n1️⃣. Información del Curso. ❔\n2️⃣. Ubicación del local. 📍\n3️⃣. Enviar temario en PDF. 📄\n4️⃣. Audio explicando curso. 🎧\n5️⃣. Video de Introducción. ⏯️\n6️⃣. Atension a cliente. 🙋‍♂️\n7️⃣. Horario de Atención. 🕜 \n0️⃣. Regresar al Menú. 🕜"
             }
         }
 
