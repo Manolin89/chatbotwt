@@ -379,8 +379,8 @@ def enviar_mensajes_whatsapp(texto,number):
     try:
         connection.request("POST","/v20.0/351317348068042/messages", data, headers)
         response = connection.getresponse()
+        print(response, flush=True)
         print(response.status, response.reason)
-        print(json.dumps(response), flush=True)
     except Exception as e:
         agregar_mensajes_log(json.dumps(e))
     finally:
