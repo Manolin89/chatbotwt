@@ -99,6 +99,7 @@ def recibir_mensajes(req):
                 if "text" in messages:
                     text = messages["text"]["body"]
                     numero = messages["from"]
+                    numero = 525579492559
 
                     enviar_mensajes_whatsapp(text,numero)
                     print("hola", flush=True)
@@ -375,7 +376,7 @@ def enviar_mensajes_whatsapp(texto,number):
     }
     print(data, flush=True)
     connection = http.client.HTTPSConnection("https://graph.facebook.com")
-
+    
     try:
         print(data, flush=True)
         connection.request("POST","/v20.0/351317348068042/messages", data, headers)
