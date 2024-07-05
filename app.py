@@ -104,20 +104,16 @@ def recibir_mensajes(req):
                     #numero = "525579492559"
 
                     enviar_mensajes_whatsapp(text,numero)
-                    print("hola", flush=True)
 
                     #Guardar Log en la BD
                     agregar_mensajes_log(json.dumps(messages))
-                    print("xxxxxxxxx", flush=True)
 
         return jsonify({'message':'EVENT_RECEIVED'})
     except Exception as e:
         return jsonify({'message':'EVENT_RECEIVED'})
 
 def identify_number(number):
-    print(number[:2], flush=True)
     if number[:2] == "52":
-        print(number[:2]+number[3:], flush=True)
         return number[:2]+number[3:]
     else:
         return number
