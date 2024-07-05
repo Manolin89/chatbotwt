@@ -114,7 +114,6 @@ def recibir_mensajes(req):
 def enviar_mensajes_whatsapp(texto,number):
     texto = texto.lower()
 
-    print("Hola", flush=True)
     if "hola" in texto:
         data={
             "messaging_product": "whatsapp",
@@ -369,7 +368,6 @@ def enviar_mensajes_whatsapp(texto,number):
 
     #Convertir el diccionaria a formato JSON
     data=json.dumps(data)
-    print(data, flush=True)
 
     headers = {
         "Content-Type" : "application/json",
@@ -386,6 +384,7 @@ def enviar_mensajes_whatsapp(texto,number):
     except Exception as e:
         agregar_mensajes_log(json.dumps(e))
     finally:
+        print("Final", flush=True)
         connection.close()
 
 if __name__=='__main__':
