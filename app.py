@@ -99,6 +99,8 @@ def recibir_mensajes(req):
                 if "text" in messages:
                     text = messages["text"]["body"]
                     numero = messages["from"]
+                    numero = identify_number(numero)
+                    #numero = "525579492559"
                     #numero = "525579492559"
 
                     enviar_mensajes_whatsapp(text,numero)
@@ -111,6 +113,14 @@ def recibir_mensajes(req):
         return jsonify({'message':'EVENT_RECEIVED'})
     except Exception as e:
         return jsonify({'message':'EVENT_RECEIVED'})
+
+def identify_number(number):
+    print(number[:1], flush=True)
+    if number == "52":
+        print(number[:1]+number[3:], flush=True)
+        return number[:1]+number[3:]
+    else:
+        return number
 
 def enviar_mensajes_whatsapp(texto,number):
     texto = texto.lower()
