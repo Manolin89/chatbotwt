@@ -115,10 +115,10 @@ def recibir_mensajes(req):
         return jsonify({'message':'EVENT_RECEIVED'})
 
 def identify_number(number):
-    print(number[:1], flush=True)
+    print(number[:2], flush=True)
     if number == "52":
-        print(number[:1]+number[3:], flush=True)
-        return number[:1]+number[3:]
+        print(number[:2]+number[4:], flush=True)
+        return number[:2]+number[4:]
     else:
         return number
 
