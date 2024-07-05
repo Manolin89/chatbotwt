@@ -87,12 +87,14 @@ def recibir_mensajes(req):
                     if tipo_interactivo == "button_reply":
                         text = messages["interactive"]["button_reply"]["id"]
                         numero = messages["from"]
+                        numero = identify_number(numero)
 
                         enviar_mensajes_whatsapp(text,numero)
                     
                     elif tipo_interactivo == "list_reply":
                         text = messages["interactive"]["list_reply"]["id"]
                         numero = messages["from"]
+                        numero = identify_number(numero)
 
                         enviar_mensajes_whatsapp(text,numero)
 
@@ -100,8 +102,6 @@ def recibir_mensajes(req):
                     text = messages["text"]["body"]
                     numero = messages["from"]
                     numero = identify_number(numero)
-                    #numero = "525579492559"
-                    #numero = "525579492559"
 
                     enviar_mensajes_whatsapp(text,numero)
 
