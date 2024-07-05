@@ -99,7 +99,7 @@ def recibir_mensajes(req):
                 if "text" in messages:
                     text = messages["text"]["body"]
                     numero = messages["from"]
-                    numero = 525579492559
+                    numero = "525579492559"
 
                     enviar_mensajes_whatsapp(text,numero)
                     print("hola", flush=True)
