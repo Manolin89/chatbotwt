@@ -117,8 +117,8 @@ def recibir_mensajes(req):
 def identify_number(number):
     print(number[:2], flush=True)
     if number[:2] == "52":
-        print(number[:2]+number[4:], flush=True)
-        return number[:2]+number[4:]
+        print(number[:2]+number[3:], flush=True)
+        return number[:2]+number[3:]
     else:
         return number
 
