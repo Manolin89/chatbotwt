@@ -380,8 +380,8 @@ def enviar_mensajes_whatsapp(texto,number):
         "Content-Type" : "application/json",
         "Authorization" : "Bearer EAAVfdJJYMZC4BO1D44cc9ltiEv32udkDiGdN3G3Jdfsc4dfF3ssObcpNFeRlWjqZAZBShnX1LZBjNdPQ0P7B5thYBKEOLt3x4YeD5yBtnZAnjtKXLZCDebfV0XlZAQnj2A7UUjvwDQZAV2QYj44gG4NuiiCPZAw2kngZApthI1g0dI71xu2qZCCAGZAbImEYeFyZAWYouczk8kDVDEBy0y2lsyktZBUKz6xloZD"
     }
-    print(data, flush=True)
-    connection = http.client.HTTPSConnection("https://graph.facebook.com")
+
+    connection = http.client.HTTPSConnection("graph.facebook.com")
     
     try:
         print(data, flush=True)
